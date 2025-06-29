@@ -1,48 +1,15 @@
-import java.util.Scanner;
+🎯 Number Guessing Game in Java
+A fun and interactive number guessing game developed using Java. The player gets multiple chances to guess a randomly generated number between a given range. With each correct guess, the score increases. Built entirely using core Java features like loops, conditionals, methods, and user input.
 
-public class NumberGame {
+📌 Project Overview
+This is a command-line based number guessing game where:
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int chances = 6;
-        int finals = 0;
-        boolean playAgain = true;
-        System.out.println("welcome Buddy!");
-        System.out.println(" hey Buddy you have about "  +chances+ " chances to win the game");
-        while(playAgain){
-            int rand=getrandN(1,100);
-            boolean guess=false;
-            for(int i=0;i<chances;i++){
-                System.out.println("chance"+(i+1)+" Enter your guess:");
-                int user=sc.nextInt();
-                if(user==rand){
-                    guess=true;
-                    finals+=1;
-                    System.out.println("You Won it.");
-                    break;
-                }
-                else if(user>rand){
-                    System.out.println("Too High");
+A random number is generated between 1 and 100.
 
-                }
-                else{
-                    System.out.println("Too Low");
-                }
-            }
-            if(guess==false){
-                System.out.println("Sorry Buddy .You lost the chances.The number is "+rand);
+The player gets 6 chances to guess the number correctly.
 
-            }
-            System.out.println("Do you want to play Again(y/n)");
-            String pA=sc.next();
-            playAgain=pA.equalsIgnoreCase("y");
-        }
-        System.out.println("That's it Buddy, Hope you Enjoyed it");
-        System.out.println("Here is your Score:"+finals);
-    }
-        public static int getrandN(int min,int max){
-            return (int)(Math.random()*(max-min+1)+min);
-        }
+The game provides feedback: "Too High" or "Too Low" for each wrong guess.
 
+After each round, the player is asked whether to play again.
 
-}
+At the end, the total score (number of rounds won) is displayed.
